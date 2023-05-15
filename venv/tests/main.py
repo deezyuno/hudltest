@@ -46,38 +46,38 @@ class HudlProj(unittest.TestCase):
         hs = self.driver.find_element(By.XPATH, schoollist)
         hs.click()
 
-        WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.ID, "FirstName")))
+        WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.ID, fname)))
 
-        fn = self.driver.find_element(By.ID, "FirstName")
+        fn = self.driver.find_element(By.ID, fname)
         fn.send_keys(random.choice(firname))
-        ln = self.driver.find_element(By.ID, "LastName")
+        ln = self.driver.find_element(By.ID, lname)
         ln.send_keys(random.choice(laname))
 
-        addy = self.driver.find_element(By.ID, "Email")
-        addy.send_keys(email)
+        addy = self.driver.find_element(By.ID, email)
+        addy.send_keys(email1)
 
-        ph = self.driver.find_element(By.ID, "Phone")
-        ph.send_keys(phone)
+        ph = self.driver.find_element(By.ID, phone)
+        ph.send_keys(phone1)
 
-        st = Select(self.driver.find_element(By.ID, "State"))
+        st = Select(self.driver.find_element(By.ID, state))
         st.select_by_index(random.randint(2, 49))
 
-        co = self.driver.find_element(By.ID, "Company")
-        co.send_keys(comp)
+        co = self.driver.find_element(By.ID, comp)
+        co.send_keys(comp1)
 
         org = Select(self.driver.find_element(By.ID, "organizationLevel_c"))
         org.select_by_index(random.randint(1, 4))
 
-        sp = Select(self.driver.find_element(By.ID, "Team_Sport__c_contact"))
+        sp = Select(self.driver.find_element(By.ID, tsport))
         sp.select_by_index(random.randint(1, 35))
 
         role = Select(self.driver.find_element(By.ID, "Role__c"))
         role.select_by_index(random.randint(1, 13))
 
-        hel = self.driver.find_element(By.ID, "message_c")
+        hel = self.driver.find_element(By.ID, mess)
         hel.send_keys(help)
 
-
+        time.sleep(5)
 
 if __name__ == '__main__':
     # unittest.main(verbosity=2)
