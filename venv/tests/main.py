@@ -7,9 +7,9 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.alert import Alert
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 import unittest
-import time
-import datetime
-from datetime import date
+# import time
+# import datetime
+# from datetime import date
 import random
 from random import randrange
 import sys
@@ -29,8 +29,8 @@ class HudlProj(unittest.TestCase):
 
     def test_base(self):
 
-        WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, "//textarea[@aria-label='Search']")))
-        search = self.driver.find_element(By.XPATH, "//textarea[@aria-label='Search']")
+        WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, gsearch)))
+        search = self.driver.find_element(By.XPATH, gsearch)
         search.click()
         search.send_keys("hudl", Keys.ENTER)
 
@@ -38,12 +38,12 @@ class HudlProj(unittest.TestCase):
         result.click()
 
 
-        WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, "(//button[text()='Request a Demo'])[1]")))
-        demo = self.driver.find_element(By.XPATH, "(//button[text()='Request a Demo'])[1]")
+        WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, rdemo)))
+        demo = self.driver.find_element(By.XPATH, rdemo)
         demo.click()
 
-        WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, "//a[contains(text(),'High Schools, Clubs & Colleges')]")))
-        hs = self.driver.find_element(By.XPATH, "//a[contains(text(),'High Schools, Clubs & Colleges')]")
+        WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, schoollist)))
+        hs = self.driver.find_element(By.XPATH, schoollist)
         hs.click()
 
         WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.ID, "FirstName")))
